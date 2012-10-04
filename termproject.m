@@ -143,9 +143,3 @@ for i=1:10000
        error_letters(validation(i,1)+1,current_carac_full+1) = error_letters(validation(i,1)+1,current_carac_full+1) + 1;
    end
 end
-
-
-error_y
-error_x
-error_pixels
-error_full
