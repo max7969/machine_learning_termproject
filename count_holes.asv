@@ -1,17 +1,23 @@
 function nb_compo = count_holes(vect)
 %Count Holes 
-    image = zeros(16,8);
+    image = one(18,10);
     
     for j=2:129
-        if vect(j) == 
+        if vect(j) == 1
+            vect(j) = 0;
+        else 
+            vect(j) = 1;
+        end
     end
     
     for i=0:15
-        image(i+1,:) = vect((i*8+2):(i*8+9));
+        image(i+2,2:9) = vect((i*8+2):(i*8+9));
     end
     
-    test1 = bwlabel(image,4)
-    test2 = bwlabel(image,8)
-    nb_compo = image;
+    figure();
+    
+    compo = bwlabel(image,8);
+    imshow(compo);
+    nb_compo = compo;
 end
 
